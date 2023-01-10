@@ -1,44 +1,78 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 body {
-    box-sizing: border-box;
-    width: 100vw;
-    font-family: "Plus Jakarta Sans", sans-serif;
     overflow-x: hidden;
     background: linear-gradient(180deg, #ffffff 0%, #f0f1ff 100%);
 }
 
 main {
-    padding: 0 8%;
+    /* padding: 0 8%; */
+    /* margin: 0.8%; */
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    overflow-x: hidden;
 }
 
-header {
+.first-container {
+    display: flex;
+}
+
+
+/* header {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     padding: 0 8%;
-}
+    z-index: 10;
+    
+    /* width: 1273px; */
 
-header button {
+
+/* margin-right: 165px; */
+
+
+/* } */
+
+.started-button {
     width: 167px;
     height: 56px;
     border-radius: 30px;
     background: #13183f;
     color: #fff;
     font-size: 18px;
+    position: absolute;
+    top: 24px;
+    right: 165px;
 }
 
 .name {
-    font-size: 30px;
+    font-size: 2.3em;
+    font-weight: 700;
+    color: #13183F;
+    position: absolute;
+    left: 165.79px;
+    top: 38.75px;
 }
 
 .description {
     width: 457px;
+    /* flex: 3; */
     height: 359px;
-    margin-top: 150px;
+    /* margin-top: 150px; */
+    padding-left: 165px;
+    padding-top: 252px;
+}
+
+.hero-container {
+    flex: 1;
+    position: relative;
+    top: -125px;
+    right: -250px;
 }
 
 .description h1 {
@@ -56,12 +90,17 @@ header button {
 }
 
 #hero {
+    width: 100%;
+}
+
+
+/* #hero {
     width: 991.63px;
     height: 936.92px;
     position: absolute;
     top: -146.13px;
     left: 870px;
-}
+  } */
 
 #hero-mobile {
     display: none;
@@ -79,20 +118,22 @@ header button {
 }
 
 .thumbnail {
-    width: 1110px;
-    height: 748px;
-    margin-top: 226px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /* width: 1110px; */
+    /* margin-top: 226px; */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 165px;
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
 }
 
 .box {
-    width: 350px;
+    /* width: 350px; */
     height: 322px;
     background-color: #fff;
     box-shadow: 0px 25px 50px rgba(6, 22, 141, 0.0442381);
     border-radius: 15px;
+    margin: 10px;
 }
 
 .box p {
@@ -104,9 +145,9 @@ header button {
 
 
 /* .box h3 {
-  padding-top: 32px;
-  padding-left: 32px;
-} */
+    padding-top: 32px;
+    padding-left: 32px;
+  } */
 
 .box img {
     padding-left: 32px;
@@ -118,7 +159,7 @@ header button {
 }
 
 .inner-box {
-    width: 286px;
+    /* width: 286px; */
     height: 218px;
     padding-left: 32px;
     display: flex;
@@ -144,20 +185,24 @@ header button {
     padding-left: 32px;
 }
 
-.footer {
-    width: 100vw;
+footer {
+    /* width: 100vw; */
     background-color: #13183f;
     padding: 32px 8%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    overflow-x: hidden;
 }
 
 .inside-footer {
     height: 56px;
-    width: 73%;
+    /* width: 73%; */
     display: flex;
     justify-content: space-between;
 }
 
-.footer button {
+footer button {
     width: 167px;
     height: 56px;
     background: linear-gradient(180deg, #4851ff -54.32%, #f02aa6 100%);
@@ -165,63 +210,62 @@ header button {
     color: #ffffff;
 }
 
-.footer p {
+footer p {
     font-size: 32px;
     font-weight: 700;
     color: #ffffff;
     padding-top: 7px;
 }
 
-button:hover {
-    opacity: 40%;
-    cursor: pointer;
-}
-
-.started:hover {
-    opacity: 40%;
-    cursor: pointer;
-}
-
 
 /* Media Queries for tablet */
 
 @media only screen and (max-width: 770px) {
-    /* body {
-    background: #4851ff;
-  } */
-    .description h1 {
-        font-size: 40px;
-        line-height: 50.4px;
+    .started-button {
+        top: 24px;
+        right: 39px;
+    }
+    .name {
+        left: 39px;
+        top: 24px;
+    }
+    .description {
+        width: 398px;
+        padding-left: 39px;
+        padding-top: 171px;
+    }
+    .hero-container {
+        top: -40px;
+        right: 80px;
     }
     #hero {
-        width: 640.71px;
-        height: 640px;
-        position: absolute;
-        top: -70.13px;
-        left: 425px;
+        width: 200%;
+    }
+    .description h1 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 50.4px;
     }
     .description p {
         font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
         width: 398px;
     }
     .thumbnail {
-        width: 689px;
-        height: 913px;
-        margin-top: 136px;
-        padding: 41px;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 39px;
     }
-    .thumbnail .box {
-        width: 340px;
-        height: 259px;
+    .box {
+        margin: 20px 10px;
     }
-    .box p {
-        font-size: 16px;
+    footer {
+        /* width: 100vw; */
+        padding: 32px 39px;
     }
-    .inner-box {
-        height: 170px;
-    }
-    .inside-footer {
-        width: 95%;
+    .checkout {
+        position: relative;
+        left: -49px;
     }
 }
 
@@ -229,52 +273,158 @@ button:hover {
 /* Media Queries for mobile phone*/
 
 @media only screen and (max-width: 420px) {
-    #hero {
-        display: none;
+    .started-button {
+        top: 16px;
+        right: 16px;
+        font-size: 1em;
+        width: 140px;
+        height: 48px;
     }
-    #hero-mobile {
-        display: block;
-        width: 327px;
-        height: 301px;
-        margin: 0 auto;
-    }
-    .description h1 {
-        font-size: 40px;
-        line-height: 50.4px;
-        margin-bottom: 26px;
-    }
-    .description p {
-        font-size: 16px;
-        width: 343px;
+    .name {
+        left: 16px;
+        top: 16px;
+        font-size: 1.8em;
     }
     .description {
-        margin-top: 50px;
+        width: 398px;
+        padding-left: 1em;
+        padding-top: 100px;
+        padding-right: 1em;
     }
     .description button {
         width: 167px;
         height: 56px;
+        margin-top: 30px;
+        font-size: 16px;
+    }
+    .hero-container {
+        top: -40px;
+        right: 80px;
+    }
+    #hero {
+        display: none;
+    }
+    .description h1 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 50.4px;
+    }
+    .description p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        width: 100%;
+        padding-top: 30px;
     }
     .thumbnail {
-        width: 343px;
-        height: 1615px;
-        margin-top: 0;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 16px 16px;
     }
-    .thumbnail .box {
-        width: 340px;
-        height: 259px;
+    .box {
+        margin: 20px 10px;
     }
-    .thumbnail .checkout {
-        width: 343px;
+    .first-container {
+        flex-direction: column;
+    }
+    #hero-mobile {
+        display: block;
+        margin-left: 40px;
+    }
+    footer {
+        /* width: 100vw; */
+        padding: 32px 16px;
+    }
+    .checkout {
+        position: relative;
+        left: 0px;
         height: 120px;
     }
     .checkout h2 {
         font-size: 24px;
         font-weight: 800;
         line-height: 32px;
-        padding: 24px 29px 32px 28px;
+        padding: 8%;
     }
-    .footer button {
+    footer button {
         width: 140px;
         height: 48px;
     }
+    .inside-footer {
+        font-size: 1.8em;
+    }
+}
+
+
+/* Media Queries for screensize 1000 */
+
+
+/* @media only screen and (max-width: 1300px) {
+  
+  
+      body {
+        background: red;
+      }
+   
+     
+      .started-button {
+        top: 24px;
+        right: 200px;
+      }
+      
+      .name {
+       
+        left: 39px;
+        top: 24px;
+        
+      }
+      
+      .description {
+        width: 398px;
+        padding-left: 39px;
+        padding-top: 171px;
+        
+      }
+      
+      .hero-container {
+        
+        top: -100px;
+        right: -100px;
+      }
+      
+      #hero {
+        width: 120%;
+      }
+      
+      .description h1 {
+        font-size: 40px;
+        font-weight: 800;
+        line-height: 50.4px;
+      }
+      
+      .description p {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 28px;
+        width: 398px;
+       }
+      
+       .thumbnail {
+        grid-template-columns: repeat(2,1fr);
+        padding: 0 39px;
+      }
+      
+      .box {
+          margin: 20px 10px;
+      }
+      footer {
+        /* width: 100vw; */
+
+padding: 32px 39px;
+
+}
+.checkout {
+    position: relative;
+    left: -49px;
+}
+
 }
