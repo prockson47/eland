@@ -217,6 +217,16 @@ footer p {
     padding-top: 7px;
 }
 
+button:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
+started:hover {
+    opacity: 50%;
+    cursor: pointer;
+}
+
 
 /* Media Queries for tablet */
 
